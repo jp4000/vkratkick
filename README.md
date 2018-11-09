@@ -7,6 +7,7 @@ What this scipt does:
   
 
 How to use:
+
   0. Install python.
   1. Install vk_api. (pip install vk_api)
   2. Make a folder for it, because it will create log files.
