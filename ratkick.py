@@ -19,7 +19,7 @@ def main():
 
 	longpoll = VkLongPoll(vk_session)
 
-	print("Automatic 'rat' kick. Author: vk.com/jp444")
+	print("Automatic 'rat' kick. Author: vk.com/jp444 / github.com/jp4000")
 	chatid = int(input("ID of a chat: "))   					   
 	peerid = chatid + 2000000000						  	   
 	chatname = str(vk.messages.getChat(chat_id=chatid)["title"]) 							 
