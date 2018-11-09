@@ -7,7 +7,7 @@ filenametime = datetime.now().strftime('%Y-%m-%d_%H.%M.%S_rat.log')
 logging.basicConfig(filename=filenametime, filemode='w', format='%(asctime)s - %(levelname)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S', level=logging.INFO)
 
 def main():
-	login, password = 'LOGIN', 'PASSWORD' # <------- Enter your login and password from vk.com!
+	login, password = 'LOGIN', 'PASSWORD' # <------- Enter your login and password from vk.com! i wont steal them, i promise.
 	vk_session = vk_api.VkApi(login, password)
 	vk = vk_session.get_api()
 	
