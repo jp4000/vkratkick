@@ -20,7 +20,7 @@ def main():
 	longpoll = VkLongPoll(vk_session)
 
 	print("Automatic 'rat' kick. Author: vk.com/jp444 / github.com/jp4000")
-	chatid = int(input("ID of a chat: "))   					   
+	chatid = int(input("ID of a chat: "))					   
 	peerid = chatid + 2000000000						  	   
 	chatname = str(vk.messages.getChat(chat_id=chatid)["title"]) 							 
 	logging.info("Monitoring: " + chatname)					  
@@ -28,13 +28,14 @@ def main():
 
 	for event in longpoll.listen():
 		if event.type == VkEventType.MESSAGE_NEW:
-			if event.raw[3] == peerid:
+			if event.raw[5] == '':
+				print(event.raw)
 				if event.raw[6]['source_act'] == 'chat_kick_user' or event.raw[6]['source_act'] == 'chat_invite_user':
 					if event.raw[6]['source_mid'] == event.raw[6]['from']:
 						userid = event.raw[6]['from']
-						firstname = str(vk.users.get(user_ids=userid, fields="")[0]["first_name"])
-						lastname = str(vk.users.get(user_ids=userid, fields="")[0]["last_name"])
-						callingout = firstname + " " + lastname + "(" + userid + ") "
+						firstname = vk.users.get(user_ids=userid, fields="")[0]["first_name"]
+						lastname = vk.users.get(user_ids=userid, fields="")[0]["last_name"]
+						callingout = firstname + " " + lastname + " (", userid, ") "
 						try:
 							kickresult = vk.messages.removeChatUser(chat_id=chatid, user_id=userid)
 							if kickresult == 1:
@@ -42,13 +43,11 @@ def main():
 								print(callingout + "was determined rat and got kicked.")
 							else:
 								logging.error(callingout + "was determined rat and didnt got kicked because of an error.")
-								print(callingout + "was determined rat and didnt got kicked because of an error.")	
+								print(callingout + "was determined rat and didnt got kicked because of an error.")
 						except:
-							logging.error(callingout + "was determined rat and didnt got kicked because of an error.")
-							print(callingout + "was determined rat and didnt got kicked because of an error.")
-
-
-
+								logging.error(callingout + "was determined rat and didnt got kicked because of an error. Printing debug stuff:")
+								logging.error(kickresult, event.raw)
+								print(callingout + "was determined rat and didnt got kicked because of an error.")
 
 if __name__ == '__main__':
 	main()
