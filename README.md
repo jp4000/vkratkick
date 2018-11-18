@@ -1,4 +1,7 @@
 # vkratkick
+
+Script is hella broken, and i'm lazy fixing it(for now), so maybe fix it yourself or wait for me.
+
 This script is created for chats in vk.com
 What this scipt does:
   1. Kick who left the chat (At the moment script running)
