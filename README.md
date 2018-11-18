@@ -15,3 +15,7 @@ How to use:
   4. Open the script, pass to him a chat id (You can find "chat id" by looking at the address bar, while looking into the chat. For example: vk.com/im?sel=c1, the chat id will be 1)
   5. ???
   6. You're done. Now enjoy chat without leaving rats! 
+
+Known bugs:
+1. Sometimes it crashes
+2. Can't log non-english/russian(and some other languages that i'm not sure about) characters
