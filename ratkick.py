@@ -17,7 +17,7 @@ BANNER = '''
                                        by: github.com/jp4000'''
 
 def main():
-    login, password = "LOGIN", "PASSWORD"
+    login, password = "LOGINHERE", "PASSWORDHERE"
     vk_session = vk_api.VkApi(login, password)
     vk = vk_session.get_api()
     try:
