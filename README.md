@@ -6,9 +6,10 @@ How to use:
   0. Install python.
   1. pip install vk_api
   2. Create folder for it, because it will probably spam you with log files.
-  3. Change /login, password = "LOGINHERE", "PASSWORDHERE"/ to yours.
-  4. Run the script, define chat id(open the chat, and look at the number after "im?sel=c"), make sure that you're administrator of that chat too!
+  3. Change /login, password = "LOGINHERE", "PASSWORDHERE"/ in "ratkick.py" to yours.
+  4. Run the ratkick.py(or crashhandler.py), define chat id(open the chat, and look at the number after "im?sel=c"), make sure that you're administrator of that chat too!
   5. Done.
 
 Known bugs:
   1. It doesnt log non-cyrillic/non-latin characters. (because logging module is being a full retard)
+  2. It can crash without a reason, but you can open crash handler to keep the script running!
